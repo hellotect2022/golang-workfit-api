@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"go_server/service/token_service"
 	"go_server/service/user_service"
 
@@ -20,6 +21,8 @@ func Login(c *gin.Context) {
 
 	// 사용자 검증 서비스 호출
 	result, err := user_service.AuthenticateUser(loginRequest.UserId, loginRequest.Password)
+
+	fmt.Println("user : ", result)
 
 	if err != nil {
 		c.JSON(401, gin.H{"error": "Authentication failed", "details": err.Error()})

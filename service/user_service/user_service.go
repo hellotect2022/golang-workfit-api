@@ -13,7 +13,7 @@ func AuthenticateUser(userId string, password string) (*models.User, error) {
 		return nil, fmt.Errorf("사용자 인증 실패: %w", err)
 	}
 
-	fmt.Printf("사용자 인증 시도: ", user)
+	fmt.Println("사용자 인증 시도: ", user)
 
 	return user, nil
 }

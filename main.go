@@ -44,6 +44,7 @@ func main() {
 	r.Use(middleware.JWTAuth())
 
 	r.GET("/api/test", handler.Test)
+	r.GET("/api/projects", handler.ProjectTree)
 
 	if err := r.Run(":8080"); err != nil {
 		log.Fatalf("서버 시작 실패: %v", err)

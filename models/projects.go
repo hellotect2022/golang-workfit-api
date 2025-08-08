@@ -9,5 +9,6 @@ type Projects struct {
 	IsPublic    bool      `gorm:"default:false"`  // 공개 여부
 	CreatedAt   time.Time `gorm:"autoCreateTime"` // 생성 시 자동 설정
 	UpdatedAt   time.Time `gorm:"autoUpdateTime"` // 수정 시 자동 갱신
-	OwnerID     uint      `gorm:"not null"`       // 소유자 ID (User 모델과의 관계를 나타냄)
+	OwnerID     string    `gorm:"not null"`       // 소유자 ID (User 모델과의 관계를 나타냄)
+	ParentID    uint      // 부모 프로젝트 ID
 }
